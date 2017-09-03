@@ -1,0 +1,34 @@
+vprice = 5000 
+bb = 0
+
+class Vehicle(object):    
+
+    def __init__(self,wheels,miles):
+        self.wheels = wheels
+        self.miles = miles       
+        
+    def sell(self):
+        return self.wheels * vprice
+    
+    def buyback(self):
+        return self.bb - (.10 * self.miles)
+    
+class Truck(Vehicle):
+    bb =10000
+            
+class Car(Vehicle):
+    bb = 8000    
+        
+class Motorcycle(Vehicle):
+    bb = 5000    
+        
+truck = Truck(4,2500)
+car = Car(4,6500)
+Moto = Motorcycle(2,1500)
+
+print truck.sell()
+print truck.buyback()
+print car.sell()
+print car.buyback()
+print Moto.sell()
+print Moto.buyback()
